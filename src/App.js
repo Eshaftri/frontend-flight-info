@@ -1,8 +1,9 @@
-import React from "react"
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css"
 import NavComp from "./components/NavComp"
 import SearchComp from "./components/SearchComp"
-import FlightStyle from "./components/FlightList"
+import FlightList from "./components/FlightList"
 
 class App extends React.Component{
   
@@ -41,11 +42,13 @@ class App extends React.Component{
       return flight.FlightNo.includes(this.state.query) || flight.Status.includes(this.state.query)
   })
     return (
-      <React.Fragment>
+      <Router>
+      <Fragment>
         <NavComp handleArrDep={this.handleArrDep}/>
         <SearchComp handleSearch={this.handleSearch} handleSelect ={this.handleSelect}/>
-        <FlightStyle data = {this.state.data} filterFlight = {filterFlight}/>
-      </React.Fragment>
+        <Route path="/flight_list" render={props => (<FlightList data = {this.state.data} filterFlight = {filterFlight} /> )} />
+        </Fragment>
+      </Router>
     );
   }
 }
