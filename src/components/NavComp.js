@@ -9,18 +9,17 @@ const NavComp = props => (
       <div to="/">
         <img src={logo} alt="store" className="toolbar__logo" />
       </div>
-      <div className="spacer" />
-      <div className="toolbar_navigation-items">
+      <div className="toolbar_navigation-items btn-group">
         <ul>
           <li>
-            <div class='btn btn-secondary active' onClick={() => props.handleArrDep("A")}>
+            <button className='button' onClick={() => props.handleArrDep("A")}>
               Arrivals
-            </div>
+            </button>
           </li>
           <li>
-            <div class='btn btn-secondary' onClick={() => props.handleArrDep("D")}>
+            <button className='button' onClick={() => props.handleArrDep("D")}>
               Departures
-            </div>
+            </button>
           </li>
         </ul>
       </div>
