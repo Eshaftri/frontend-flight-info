@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css"
+import NavComp from './components/NavComp'
 
 function App() {
   return (
-    <div>
-    flight info App
-    </div>
+    <React.Fragment>
+    <NavComp/>
+    </React.Fragment>
   );
 }
 
