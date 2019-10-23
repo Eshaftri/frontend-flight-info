@@ -27,13 +27,14 @@ class App extends React.Component{
     this.componentDidMount(arrDep)
   }
 
+
   render() {
     let filterFlight  = this.state.data.filter((flight)=>{
       return flight.FlightNo.includes(this.state.query) || flight.Status.includes(this.state.query)
   })
     return (
       <React.Fragment>
-        <NavComp />
+        <NavComp handleArrDep={this.handleArrDep}/>
         <SearchComp />
         <FlightStyle data = {this.state.data} filterFlight = {filterFlight}/>
       </React.Fragment>
