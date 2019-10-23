@@ -27,6 +27,14 @@ class App extends React.Component{
     this.componentDidMount(arrDep)
   }
 
+  handleSearch = event =>{
+    this.setState({query : event.target.value.toLocaleUpperCase()})
+  }
+
+  handleSelect = event =>{
+    console.log(event.target.value)
+    this.setState({query : event.target.value})
+  }
 
   render() {
     let filterFlight  = this.state.data.filter((flight)=>{
@@ -35,7 +43,7 @@ class App extends React.Component{
     return (
       <React.Fragment>
         <NavComp handleArrDep={this.handleArrDep}/>
-        <SearchComp />
+        <SearchComp handleSearch={this.handleSearch} handleSelect ={this.handleSelect}/>
         <FlightStyle data = {this.state.data} filterFlight = {filterFlight}/>
       </React.Fragment>
     );
