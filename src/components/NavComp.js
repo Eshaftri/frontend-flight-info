@@ -7,9 +7,6 @@ import "./NavComp.css";
 const NavComp = props => (
   <header className="nav_bar">
     <nav className="toolbar__navigation">
-      <div to="/">
-        <img src={logo} alt="store" className="toolbar__logo" />
-      </div>
       <div className="toolbar_navigation-items btn-group">
         <ul>
           <li>
@@ -28,6 +25,7 @@ const NavComp = props => (
           </li>
         </ul>
       </div>
+      <div className='title'>Flight Information</div>
     </nav>
   </header>
 );
