@@ -1,6 +1,6 @@
 
 
-### flight information screen front end website using react framework, based on edinburgh airport API.
+### React user interface for flight information screen, based on edinburgh airport API.
 ### DEMO:https://react-flight-info.netlify.com
 
 
